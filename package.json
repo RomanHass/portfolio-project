@@ -157,5 +157,9 @@
         }
       ]
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/RomanHass/portfolio-project.git",
+  "author": "Roman Khassazhirov <roman.khassazhirov@gmail.com>",
+  "license": "MIT"
 }

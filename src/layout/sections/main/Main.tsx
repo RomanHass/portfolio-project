@@ -11,7 +11,7 @@ export const Main = () => {
           <div>
             <MainTitle>Software Developer</MainTitle>
             <SecondTitle>
-              Hello,  my name is Vahid Navazan
+              Hello,  my name is Roman Khassazhirov
             </SecondTitle>
             <p>
               Short text with details about you, what you do or your professional career. You can add more information on the about page.

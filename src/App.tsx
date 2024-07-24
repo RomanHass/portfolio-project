@@ -1,4 +1,5 @@
 import './App.css';
+import { Footer } from './layout/footer/Footer';
 import { Header } from './layout/header/Header';
 import { Contact } from './layout/sections/contacts/Contacts';
 import { Main } from './layout/sections/main/Main';
@@ -13,6 +14,7 @@ function App() {
       <Skills/>
       <Projects/>
       <Contact/>
+      <Footer/>
     </div>
   );
 }

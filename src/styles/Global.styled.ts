@@ -100,6 +100,8 @@ export const Globalstyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    line-height: 1.2;
     background-color: ${theme.colors.primaryBg};
     color: ${theme.colors.font}
   }

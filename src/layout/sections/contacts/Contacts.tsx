@@ -21,7 +21,6 @@ export const Contact = () => {
 
 const StyledContacts = styled.section`
   min-height: 600px;
-  background-color: #a56969;
 `
 
 const StyledForm = styled.form`

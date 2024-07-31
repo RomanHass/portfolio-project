@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import { Menu } from "../../compontens/menu/Menu";
+import { Container } from "../../compontens/Container";
 
 const items = ['About', 'Projects', 'Contacts'];
 
 export const Header = () => {
   return (
     <StyledHeader>
-      <Menu menuItems={items}/>
+      <Container>
+        <Menu menuItems={items}/>
+      </Container>
     </StyledHeader>
   );
 };
 
-const StyledHeader = styled.header`
-  background-color: bisque;
-`
+const StyledHeader = styled.header``

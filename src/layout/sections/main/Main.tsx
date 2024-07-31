@@ -29,7 +29,6 @@ export const Main = () => {
 
 const StyledMain = styled.main`
   min-height: 100vh;
-  background-color: burlywood;
 `
 
 const  MainTitle = styled.h1`

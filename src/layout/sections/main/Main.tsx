@@ -1,14 +1,17 @@
 import styled from "styled-components";
-
-
-import { FlexWrapper } from "../../../compontens/FlexWrapper";
+import { Container } from "../../../compontens/Container";
+import { Skills } from "../skills/Skills";
+import { Projects } from "../projects/Projects";
+import { Contact } from "../contacts/Contacts";
 
 export const Main = () => {
   return (
     <StyledMain>
-        <FlexWrapper align={"center"} justify="space-between">
-
-      </FlexWrapper>
+      <Container>
+        <Skills/>
+        <Projects/>
+        <Contact/>
+      </Container>
     </StyledMain>
   );
 };

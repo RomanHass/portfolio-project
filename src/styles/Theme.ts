@@ -4,5 +4,5 @@ export const theme = {
     accent: "#25282B",
 
     font: "#828282",
-  }
-}
+    rarely: "#FDC435",
+  }}

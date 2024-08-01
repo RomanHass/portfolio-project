@@ -82,6 +82,7 @@ export const Globalstyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    cursor: pointer;
   }
 
   ul {

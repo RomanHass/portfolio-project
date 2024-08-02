@@ -94,6 +94,10 @@ export const Globalstyle = createGlobalStyle`
     border: none;
   }
 
+  section {
+    padding: 100px 0;
+  }
+
   body {
     margin: 0;
     font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../../../compontens/FlexWrapper";
 import { SectionTitle } from "../../../compontens/SectionTitle";
-import { Skill } from "../skill/Skill";
+import { Skill } from "./skill/Skill";
 
 export const Skills = () => {
   return (
     <StyledSkills>
       <SectionTitle>Skills</SectionTitle>
-      <FlexWrapper wrap={"wrap"} justify="space-between">
+      <FlexWrapper wrap={"wrap"} justify="space-between" gap={"95px"}>
         <Skill iconId={"vscode"}/>
         <Skill iconId={"css"}/>
         <Skill iconId={"html"}/>
@@ -25,6 +25,4 @@ export const Skills = () => {
   );
 };
 
-const StyledSkills = styled.section`
-  min-height: 500px;
-`
+const StyledSkills = styled.section``

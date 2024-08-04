@@ -27,8 +27,6 @@ export const Project = (props: ProjectPropsType) => {
   );
 };
 
-
-
 const StyledProject = styled.div`
   max-width: 992px;
   margin: 0 auto;
@@ -39,6 +37,7 @@ const StyledProject = styled.div`
   &:not(:last-child) {
     margin-bottom: 80px;
   }
+  
 `
 
 const FlexWrapper = styled.div<{ reverse?: boolean }>`
@@ -57,10 +56,6 @@ const StyledImage = styled.div`
 
 const TitleThird = styled.h3`
   margin-bottom: 24px;
-  font-family: "Playfair Display", sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  color: ${theme.colors.accent};
 `
 
 const Text = styled.p`
@@ -69,11 +64,10 @@ const Text = styled.p`
 `
 
 const Link = styled.a`
-  display: block;
+  display: inline-block;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
-  color: ${theme.colors.accent};
   max-width: 150px;
   border: 1px solid ${theme.colors.accent};
   border-radius: 24px;

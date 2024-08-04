@@ -83,6 +83,7 @@ export const Globalstyle = createGlobalStyle`
   a {
     text-decoration: none;
     cursor: pointer;
+    color: ${theme.colors.accent};
   }
 
   ul {
@@ -96,6 +97,13 @@ export const Globalstyle = createGlobalStyle`
 
   section {
     padding: 100px 0;
+  }
+
+  h3 {
+    font-family: "Playfair Display";
+    font-weight: 700;
+    font-size: 40px;
+    color: ${theme.colors.accent};
   }
 
   body {

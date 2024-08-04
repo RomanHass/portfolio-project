@@ -21,6 +21,7 @@ export const Projects = () => {
         text={"What was your role, your deliverables, if the project was personal, freelancing."} 
         src={ProjectTwo} 
         link={"View Project"}
+        reverse
       />
       <Project 
         title={"Project Name"} 
@@ -33,6 +34,4 @@ export const Projects = () => {
 };
 
 
-const StyledProjects = styled.section`
-  min-height: 100vh;
-`
+const StyledProjects = styled.section``

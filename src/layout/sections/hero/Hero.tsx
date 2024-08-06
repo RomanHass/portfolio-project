@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import backgroundImage from '../../../assets/images/hero.png';
 import { FlexWrapper } from '../../../compontens/FlexWrapper';
 import { theme } from '../../../styles/Theme';
+import { Button } from '../../../compontens/Button';
 
 export const Hero = () => {
   return (
@@ -15,8 +16,8 @@ export const Hero = () => {
           <AboutMe>
             Short text with details about you, what you do or your professional career. You can add more information on the about page.
           </AboutMe>
-          <SocialLink>Projects</SocialLink>
-          <SocialLink>LinkedIn</SocialLink>
+          <Button as="a">Projects</Button>
+          <Button as="a">LinkedIn</Button>
         </HeroContent>
         <Background/>
       </FlexWrapper>
@@ -50,29 +51,6 @@ const AboutMe = styled.p`
   margin-bottom: 32px;
   font-size: 24px;
   line-height: 1.5;
-`
-
-const SocialLink = styled.a`
-  display: inline-block;
-  max-width: 115px;
-  padding: 8px 24px;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.5;
-  border: 2px solid ${theme.colors.accent};
-  border-radius: 8px;
-  color: ${theme.colors.accent};
-  background-color: transparent;
-
-  &:hover {
-    background-color: ${theme.colors.rarely};
-    border: 2px solid transparent;
-  }
-
-  &:not(:last-child) {
-    margin-right: 12px;;
-  }
 `
 
 const Background = styled.div`

@@ -5,4 +5,5 @@ export const theme = {
 
     font: "#828282",
     rarely: "#FDC435",
+    borderColor: "#e8ecf4"
   }}

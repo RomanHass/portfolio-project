@@ -1,38 +1,67 @@
 import styled from "styled-components";
 import { SectionTitle } from "../../../compontens/SectionTitle";
 import { Button } from "../../../compontens/Button";
+import { Container } from "../../../compontens/Container";
+import { theme } from "../../../styles/Theme";
 
 export const Contact = () => {
   return (
     <StyledContacts>
-      <SectionTitle>Contacts</SectionTitle>
-      <StyledForm>
-        <label>Name</label>
-        <Field placeholder={"enter name"}/>
-        <label>Email</label>
-        <Field placeholder={"enter email"}/>
-        <label>Message</label>
-        <Field as={"textarea"} placeholder={"enter message"}/>
-        <Button type={"submit"}>Send</Button>
-      </StyledForm>
+      <Container>
+        <SectionTitle>Contacts</SectionTitle>
+        <StyledForm>
+          <Label>Name
+            <Field placeholder={"Enter name"}/>
+          </Label>
+          <Label>Email
+            <Field placeholder={"Enter email"}/>
+          </Label>
+          <Label>Message
+            <Field as={"textarea"} placeholder={"Enter message"}/>
+          </Label>
+          <Button type={"submit"}>Send</Button>
+        </StyledForm>
+      </Container>
     </StyledContacts>
   );
 };
 
-const StyledContacts = styled.section`
-  min-height: 600px;
-`
+const StyledContacts = styled.section``
 
 const StyledForm = styled.form`
   margin: 0 auto;
-  max-width: 520px;
+  max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 25px;
+
+  ${Button} {
+    margin-left: auto;
+  }
+
+  textarea {
+    resize: none;
+    height: 160px;
+  }
 `
 
 const Field = styled.input`
-  &:not(:last-child) {
-    margin-bottom: 25px;
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px 15px;
+  background-color: #fff;
+  border: 1px solid ${theme.colors.borderColor};
+  border-radius: 8px;
+
+  &:focus-visible {
+    outline: 1px solid ${theme.colors.borderColor};
   }
+`
+
+const Label = styled.label`
+  font-weight: 600;
+  font-size: 16px;
+  color: ${theme.colors.accent};
 `

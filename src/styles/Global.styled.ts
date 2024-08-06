@@ -93,6 +93,13 @@ export const Globalstyle = createGlobalStyle`
   button {
     background-color: unset;
     border: none;
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  button {
+    font-family: inherit;
   }
 
   section {

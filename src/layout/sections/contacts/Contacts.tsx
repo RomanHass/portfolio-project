@@ -38,6 +38,10 @@ const StyledForm = styled.form`
 
   ${Button} {
     margin-left: auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    max-width: 90px;
+    font-size: 18px;
   }
 
   textarea {

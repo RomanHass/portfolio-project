@@ -47,14 +47,13 @@ const SocialIconLink = styled.a``
 
 const Copyright = styled.small`
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
 `
 
 const FooterBackground = styled.div`
   position: relative;
-  max-width: 1400px;
   width: 100%;
   height: 344px;
   background-image: url(${footerBg});

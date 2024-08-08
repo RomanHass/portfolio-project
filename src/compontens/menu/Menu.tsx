@@ -7,45 +7,34 @@ export const Menu = (props: {menuItems: Array<string>}) => {
   return (
     <StyledMenu>
       <ul>
-        <Container>
-          <FlexWrapper justify={"flex-end"} gap={"50px"} align={"center"}>
-            {props.menuItems.map((item, index) => {
-              return (
-                <ListItem key={index}>
-                  <Link href="">
-                    {item}
-                    <Mask>
-                        <span>{item}</span>
-                    </Mask>
-                    <Mask>
-                        <span>{item}</span>
-                    </Mask>
-                  </Link>
-                </ListItem>
-              )
-            })}
-          </FlexWrapper>
-        </Container>
+        <FlexWrapper justify={"flex-end"} gap={"50px"} align={"center"}>
+          {props.menuItems.map((item, index) => {
+            return (
+              <ListItem key={index}>
+                <Link href="">
+                  {item}
+                  <Mask>
+                      <span>{item}</span>
+                  </Mask>
+                  <Mask>
+                      <span>{item}</span>
+                  </Mask>
+                </Link>
+              </ListItem>
+            )
+          })}
+        </FlexWrapper>
       </ul>
     </StyledMenu>
   );
 };
 
-const StyledMenu = styled.nav`
-  ul {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 15px 0;
-  }
-`
+const StyledMenu = styled.nav``
 
 const Link = styled.a`
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 22px;
   color: transparent;
 `
 
@@ -56,8 +45,8 @@ const Mask = styled.span`
   display: inline-block;
   height: 50%;
   overflow-y: hidden;
-  /* outline: 1px solid red; */
   color: ${theme.colors.accent};
+  color: #fff;
 
   & + & {
     top: 50%;
@@ -79,9 +68,10 @@ const ListItem = styled.li`
     right: -7px;
     z-index: 1;
     display: inline-block;
-    height: 2px;
+    height: 3px;
     background-color: ${theme.colors.accent};
     transform: scale(0);
+    cursor: pointer;
   }
 
   &:hover {
@@ -90,7 +80,7 @@ const ListItem = styled.li`
     }
 
     ${Mask} {
-      color: #d60c0c;
+      color: ${theme.colors.rarely};
       transform: skewX(12deg) translateX(5px);
       
       & + ${Mask} {

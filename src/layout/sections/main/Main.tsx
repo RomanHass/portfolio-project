@@ -3,10 +3,12 @@ import { Container } from "../../../compontens/Container";
 import { Skills } from "../skills/Skills";
 import { Projects } from "../projects/Projects";
 import { Contact } from "../contacts/Contacts";
+import { Hero } from "../hero/Hero";
 
 export const Main = () => {
   return (
     <StyledMain>
+      <Hero/>
       <Container>
         <Skills/>
         <Projects/>

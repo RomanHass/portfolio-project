@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import backgroundImage from '../../../assets/images/hero.png';
+import backgroundImage from '../../../assets/images/main_photo.png';
 import { FlexWrapper } from '../../../compontens/FlexWrapper';
 import { theme } from '../../../styles/Theme';
 import { Button } from '../../../compontens/Button';
 
 export const Hero = () => {
   return (
-    <>
-      <FlexWrapper>
+    <HeroContainer>
+      <FlexWrapper justify="center">
         <HeroContent>
           <MainTitle>Software Developer</MainTitle>
           <SecondTitle>
@@ -19,15 +19,20 @@ export const Hero = () => {
           <Button as="a">Projects</Button>
           <Button as="a">LinkedIn</Button>
         </HeroContent>
-        <Background/>
+        <Photo src={backgroundImage} alt="Person"/>
       </FlexWrapper>
-    </>
+    </HeroContainer>
   );
 };
 
+const HeroContainer = styled.div`
+  overflow: hidden;
+  padding: 0 10px;
+`
+
 const HeroContent = styled.div`
   max-width: 508px;
-  margin-top: 100px;
+  margin-top: 150px;
 `
 
 const MainTitle = styled.h1`
@@ -53,14 +58,24 @@ const AboutMe = styled.p`
   line-height: 1.5;
 `
 
-const Background = styled.div`
+// const Background = styled.div`
+//   position: relative;
+//   top: -225px;
+//   right: -75px;
+//   width: 777px;
+//   height: 877px;
+//   background-image: url(${backgroundImage});
+//   background-size: contain;
+//   background-position: top;
+//   background-repeat: no-repeat;
+// `
+
+const Photo = styled.img`
   position: relative;
-  top: -5px;
-  right: -75px;
-  width: 720px;
-  height: 629px;
-  background-image: url(${backgroundImage});
-  background-size: contain;
-  background-position: top;
-  background-repeat: no-repeat;
+  top: -220px;
+  right: -100px;
+  display: block;
+  width: 777px;
+  height: 877px;
+  object-fit: cover;
 `

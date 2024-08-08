@@ -1,35 +1,44 @@
 import styled from "styled-components";
-import { FlexWrapper } from "../FlexWrapper";
 import { theme } from "../../styles/Theme";
-import { Container } from "../Container";
 
 export const Menu = (props: {menuItems: Array<string>}) => {
   return (
     <StyledMenu>
       <ul>
-        <FlexWrapper justify={"flex-end"} gap={"50px"} align={"center"}>
-          {props.menuItems.map((item, index) => {
-            return (
-              <ListItem key={index}>
-                <Link href="">
-                  {item}
-                  <Mask>
-                      <span>{item}</span>
-                  </Mask>
-                  <Mask>
-                      <span>{item}</span>
-                  </Mask>
-                </Link>
-              </ListItem>
-            )
-          })}
-        </FlexWrapper>
+        {props.menuItems.map((item, index) => {
+          return (
+            <ListItem key={index}>
+              <Link href="">
+                {item}
+                <Mask>
+                    <span>{item}</span>
+                </Mask>
+                <Mask>
+                    <span>{item}</span>
+                </Mask>
+              </Link>
+            </ListItem>
+          )
+        })}
       </ul>
     </StyledMenu>
   );
 };
 
-const StyledMenu = styled.nav``
+const StyledMenu = styled.nav`
+  display: block;
+  @media ${theme.media.mobile} {
+    display: none;
+  }
+
+  ul {
+    padding: 8px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+  }
+`
 
 const Link = styled.a`
   font-family: "Raleway", sans-serif;

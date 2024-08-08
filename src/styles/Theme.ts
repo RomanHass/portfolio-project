@@ -6,4 +6,10 @@ export const theme = {
     font: "#828282",
     rarely: "#FDC435",
     borderColor: "#e8ecf4"
-  }}
+  },
+
+  media: {
+    tablet: "screen and (max-width: 767px)",
+    mobile: "screen and (max-width: 575px)"
+  }
+}

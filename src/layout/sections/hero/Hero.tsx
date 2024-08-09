@@ -23,16 +23,20 @@ export const Hero = () => {
   );
 };
 
-const HeroContainer = styled.div`
+const HeroContainer = styled.section`
   min-height: 100vh;
   overflow: hidden;
-  padding: 0 10px;
+  padding: 0 10px 77px;
   display: flex;
   justify-content: center;
 
   @media ${theme.media.xl} {
     flex-wrap: wrap-reverse;
-  } 
+  }
+
+  @media ${theme.media.md} {
+    padding-bottom: 40px;
+  }
 `
 
 const HeroContent = styled.div`
@@ -59,7 +63,7 @@ const MainTitle = styled.h1`
 `
 
 const SecondTitle = styled.h2`
-  ${font({family:"'Roboto', sans-serif", weight: 700, color: '#333', lineHeight: 1.2, Fmax: 48, Fmin: 30})};
+  ${font({family:"'Roboto', sans-serif", weight: 700, color: '#333', lineHeight: 1.2, Fmax: 44, Fmin: 30})};
   margin-bottom: 32px;
 
   span {

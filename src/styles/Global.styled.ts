@@ -103,7 +103,11 @@ export const Globalstyle = createGlobalStyle`
   }
 
   section {
-    padding: 100px 0;
+    padding: 77px 0;
+
+    @media ${theme.media.md} {
+      padding: 40px 0;
+    }
   }
 
   h3 {

@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import { theme } from "../styles/Theme";
+import { font } from "../styles/Common";
 
 export const SectionTitle = styled.h2`
+  ${font({family:"'Playfair Display', sans-serif", weight: 700, color: `${theme.colors.accent}`, lineHeight: 1.2, Fmax: 48, Fmin: 40})};
   position: relative;
   margin-bottom: 85px;
-  font-family: "Playfair Display", sans-serif;
-  font-weight: 700;
-  font-size: 48px;
   text-align: center;
-  color: ${theme.colors.accent};
+
+  @media ${theme.media.md} {
+    margin-bottom: 50px;
+  }
 
   &::before {
     content: '';

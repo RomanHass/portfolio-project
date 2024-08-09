@@ -9,7 +9,9 @@ export const theme = {
   },
 
   media: {
-    tablet: "screen and (max-width: 767px)",
-    mobile: "screen and (max-width: 575px)"
+    sm: "screen and (max-width: 575px)",
+    md: "screen and (max-width: 767px)",
+    lg: "screen and (max-width: 991px)",
+    xl: "screen and (max-width: 1199px)",
   }
 }

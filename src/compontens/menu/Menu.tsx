@@ -27,7 +27,7 @@ export const Menu = (props: {menuItems: Array<string>}) => {
 
 const StyledMenu = styled.nav`
   display: block;
-  @media ${theme.media.mobile} {
+  @media ${theme.media.sm} {
     display: none;
   }
 

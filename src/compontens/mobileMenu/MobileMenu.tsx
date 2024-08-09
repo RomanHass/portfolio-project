@@ -4,10 +4,10 @@ import { theme } from "../../styles/Theme";
 export const MobileMenu = (props: {menuItems: Array<string>}) => {
   return (
     <StyledMobileMenu>
-      <BurgerButton isOpen={true}>
+      <BurgerButton isOpen={!true}>
         <span></span>
       </BurgerButton>
-      <MobileMenuPopup isOpen={true}>
+      <MobileMenuPopup isOpen={!true}>
         <ul>
           {props.menuItems.map((item, index) => {
             return (
@@ -33,7 +33,7 @@ export const MobileMenu = (props: {menuItems: Array<string>}) => {
 const StyledMobileMenu = styled.nav`
   display: none;
 
-  @media ${theme.media.mobile} {
+  @media ${theme.media.sm} {
     display: block;
   }
 `
@@ -41,9 +41,9 @@ const StyledMobileMenu = styled.nav`
 const BurgerButton = styled.button<{isOpen: boolean}>`
   position: absolute;
   top: 50%;
-  right: 17px;
+  right: 3%;
   transform: translateY(-50%);
-  width: 33px;
+  width: 30px;
   height: 18px;
   z-index: 999;
 
@@ -54,20 +54,26 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
     transform: translateY(-50%);
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    border-radius: 10px;
+    background-color: ${theme.colors.accent};
 
     ${props => props.isOpen && css<{isOpen: boolean}>`
-      background-color: ${theme.colors.accent};
+      background-color: transparent;
     `}
 
-    &:before {
+    &:before,
+    &:after {
       content: '';
       position: absolute;
       left: 0;
-      transform: translateY(-8px);
       width: 100%;
       height: 2px;
-      background-color: #fff;
+      border-radius: 10px;
+      background-color: ${theme.colors.accent};
+    }
+
+    &:before {
+      transform: translateY(-8px);
 
       ${props => props.isOpen && css<{isOpen: boolean}>`
         transform: rotate(-45deg) translateY(0);
@@ -75,13 +81,7 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
     }
 
     &:after {
-      content: '';
-      position: absolute;
-      left: 0;
       transform: translateY(8px);
-      width: 100%;
-      height: 2px;
-      background-color: #fff;
 
       ${props => props.isOpen && css<{isOpen: boolean}>`
         transform: rotate(45deg) translateY(0);
@@ -94,9 +94,10 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
   position: fixed;
   display: none;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 100;
-  background-color: ${theme.colors.accent};
-  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.9);
 
   ${props => props.isOpen && css<{isOpen: boolean}>`
     display: flex;

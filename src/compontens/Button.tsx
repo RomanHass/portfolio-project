@@ -14,9 +14,15 @@ export const Button = styled.button`
     color: ${theme.colors.accent};
     background-color: transparent;
 
-  &:hover {
-    background-color: ${theme.colors.rarely};
-    border: 2px solid transparent;
+  @media (hover: hover) {
+    &:hover {
+      background-color: ${theme.colors.rarely};
+      border: 2px solid transparent;
+    }
+
+  }
+  &:active {
+    transform: translateY(2px)
   }
 
   &:not(:last-child) {

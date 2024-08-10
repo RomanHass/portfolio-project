@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "./Theme";
+import { font } from "./Common";
 
 export const Globalstyle = createGlobalStyle`
   @font-face {
@@ -111,10 +112,7 @@ export const Globalstyle = createGlobalStyle`
   }
 
   h3 {
-    font-family: "Playfair Display";
-    font-weight: 700;
-    font-size: 40px;
-    color: ${theme.colors.accent};
+    ${font({family:"'Playfair Display', sans-serif", weight: 700, color: `${theme.colors.accent}`, Fmax: 40, Fmin: 32})};
   }
 
   body {

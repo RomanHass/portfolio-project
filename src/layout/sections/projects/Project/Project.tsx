@@ -1,27 +1,30 @@
 import styled from "styled-components";
-// import { FlexWrapper } from "../../../../compontens/FlexWrapper";
+import { FlexWrapper } from "../../../../compontens/FlexWrapper";
 import { theme } from "../../../../styles/Theme";
+import { Button } from "../../../../compontens/Button";
 
 type ProjectPropsType = {
   title: string
   text: string
   src: string
   link: string
-  reverse?: boolean; // Добавляем флаг reverse
 }
 
 export const Project = (props: ProjectPropsType) => {
   return (
     <StyledProject>
-      <FlexWrapper reverse={props.reverse}>
-        <StyledContent>
-          <TitleThird>{props.title}</TitleThird>
-          <Text>{props.text}</Text>
-          <Link href={"#"}>{props.link}</Link>
-        </StyledContent>
-        <StyledImage>
+      <FlexWrapper align='center'>
+        <StyledContentBox>
+          <StyledContent>
+            <TitleThird>{props.title}</TitleThird>
+            <Text>{props.text}</Text>
+            {/* <Link href={"#"}>{props.link}</Link> */}
+            <Button as="a">{props.link}</Button>
+          </StyledContent>
+        </StyledContentBox>
+        <StyledContentBox>
           <Image src={props.src} alt="" />
-        </StyledImage>
+        </StyledContentBox>
       </FlexWrapper>
     </StyledProject>
   );
@@ -29,6 +32,7 @@ export const Project = (props: ProjectPropsType) => {
 
 const StyledProject = styled.div`
   max-width: 992px;
+  min-height: 524px;
   margin: 0 auto;
   border-radius: 24px;
   background-color: #fff;
@@ -36,22 +40,56 @@ const StyledProject = styled.div`
 
   &:not(:last-child) {
     margin-bottom: 80px;
-  }
+
+    @media ${theme.media.md} {
+      margin-bottom: 50px;
+    }
+  } 
   
+  &:nth-child(odd) ${FlexWrapper} {
+    flex-direction: row-reverse;
+  }
+
+  ${Button} {
+    padding: 8px 24px;
+    font-size: 18px;
+    max-width: 150px;
+    border: 1px solid ${theme.colors.accent};
+    border-radius: 24px;
+  }
+
+  @media ${theme.media.lg} {
+    max-width: 600px;
+
+    ${FlexWrapper} {
+      flex-direction: column-reverse;
+    }
+
+    &:nth-child(odd) ${FlexWrapper} {
+      flex-direction: column-reverse;
+    }
+  }
 `
 
-const FlexWrapper = styled.div<{ reverse?: boolean }>`
-  display: flex;
-  align-items: center;
-  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
+const StyledContentBox = styled.div `
+  width: 100%;
 `
 
 const StyledContent = styled.div`
   max-width: 405px;
+  min-height: 524px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
-`
 
-const StyledImage = styled.div`
+  @media ${theme.media.md} {
+    max-width: 400px;
+  }
+
+  @media ${theme.media.sm} {
+    max-width: 275px;
+  }
 `
 
 const TitleThird = styled.h3`
@@ -63,34 +101,45 @@ const Text = styled.p`
   font-size: 18px;
 `
 
-const Link = styled.a`
-  display: inline-block;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  max-width: 150px;
-  border: 1px solid ${theme.colors.accent};
-  border-radius: 24px;
-  padding: 8px 24px;
+// const Link = styled.a`
+//   padding: 8px 24px;
+//   display: inline-block;
+//   font-family: "Roboto", sans-serif;
+//   font-weight: 500;
+//   font-size: 18px;
+//   max-width: 150px;
+//   border: 1px solid ${theme.colors.accent};
+//   border-radius: 24px;
 
-  &:hover {
-    border: 1px solid transparent;
-    background-color: ${theme.colors.rarely};
-  }
-`
+//   &:hover {
+//     border: 1px solid transparent;
+//     background-color: ${theme.colors.rarely};
+//   }
+// `
 
 const Image = styled.img`
   display: block;
-  width: 496px;
-  height: 526px;
+  width: 100%;
+  height: 524px;
   object-fit: cover;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
+
+  @media ${theme.media.lg} {
+    border-top-left-radius: 24px;
+    border-bottom-right-radius: 0;
+  }
 
   ${StyledProject}:nth-child(odd) & {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
+
+    @media ${theme.media.lg} {
+      border-top-left-radius: 24px;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 24px;
+    }
   }
 `

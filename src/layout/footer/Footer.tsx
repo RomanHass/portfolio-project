@@ -43,24 +43,41 @@ const StyledFooter = styled.footer`
 `
 
 const SocialBlock = styled.div`
+  max-width: 400px;
+  width: 100%;
   position: absolute;
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  text-align: center;
+
+  @media ${theme.media.sm} {
+    max-width: 220px;
+    top: -60%;
+  }
 `
 
 const SocialIconsList = styled.ul`
   list-style-type: none;
+  margin-bottom: 10px;
 `
 
-const SocialIconsItem = styled.li``
+const SocialIconsItem = styled.li`
+  line-height: 0;
+`
 
 const SocialIconLink = styled.a`
   display: inline-block;
-
+  line-height: 0;
   color: ${theme.colors.accent};
 
-  &:hover {
+  @media (hover: hover) {
+    &:hover {
+      color: ${theme.colors.rarely};
+    }
+
+  }
+  &:active {
     color: ${theme.colors.rarely};
   }
 `
@@ -72,8 +89,12 @@ const Copyright = styled.small`
 const FooterBackground = styled.div`
   position: relative;
   width: 100%;
-  height: 344px;
+  min-height: 344px;
   background-image: url(${footerBg});
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media ${theme.media.sm} {
+    min-height: 140px;
+  }
 `

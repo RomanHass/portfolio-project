@@ -117,6 +117,7 @@ export const Globalstyle = createGlobalStyle`
 
   body {
     margin: 0;
+    min-width: 320px;
     font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;

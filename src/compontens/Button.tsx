@@ -22,7 +22,8 @@ export const Button = styled.button`
 
   }
   &:active {
-    transform: translateY(2px)
+    background-color: ${theme.colors.rarely};
+    transform: translateY(2px);
   }
 
   &:not(:last-child) {

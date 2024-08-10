@@ -37,11 +37,12 @@ const StyledForm = styled.form`
   gap: 25px;
 
   ${Button} {
-    margin-left: auto;
     padding-top: 6px;
     padding-bottom: 6px;
     max-width: 90px;
     font-size: 18px;
+    align-self: flex-end;
+    margin-bottom: 3px;
   }
 
   textarea {
